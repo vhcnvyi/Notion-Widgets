@@ -25,10 +25,10 @@
     }
 
     .icon {
+      /* Change the icon size here */
       font-size: 2em;
-      color: #7a7a7a;
-      filter: grayscale(100%);
-      transition: color 0.3s ease;
+      /* Change the icons colours here*/
+      color: #7a7a7a
     }
 
     .google:hover {
@@ -79,23 +79,20 @@
       position: relative;
       margin: 10px;
       cursor: pointer;
-      transition: filter 0.3s ease;
-
-    .social:hover .icon {
-      color: inherit;
-
-    .social:hover img
-      filter: grayscale(0%);
     }
-  </style>
+ </style>
+
 </head>
+
 <body>
+
+  <body>
 
   <div class="wrapper">
 
     <!-- Start Google Suite Icon -->
     <div id="google" onclick="navigate(this.id)" class="social">
-      <span class="icon google"><img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Suite" style="width: 32px; height: 32px;"></span>
+      <span class="icon google"><img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png"><i class="fa-solid fa-google"></i></span>
     </div>
 
     <!-- Start Slack Icon -->
