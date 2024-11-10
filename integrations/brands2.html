@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Business Tools</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      font-family: "Poppins", sans-serif;
+      place-items: center;
+    }
+
+    .wrapper {
+      padding-top: 10px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .icon {
+      color: #7a7a7a;
+      transition: color 0.3s ease;
+    }
+
+    .social img {
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .google:hover {
+      color: #4285F4;
+    }
+
+    .slack:hover {
+      color: #4A154B;
+    }
+
+    .netsuite:hover {
+      color: #E07B47;
+    }
+
+    .jumpcloud:hover {
+      color: #32B5E4;
+    }
+
+    .notion:hover {
+      color: #000000;
+    }
+
+    .greenhouse:hover {
+      color: #3BA9B1;
+    }
+
+    .jira:hover {
+      color: #0052CC;
+    }
+
+    .social:hover img {
+      filter: grayscale(0%);
+    }
+
+    .social {
+      position: relative;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Start Google Suite Icon -->
+    <div id="google" onclick="navigate(this.id)" class="social">
+      <span class="icon google"><img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Suite" style="width: 32px; height: 32px;"></span>
+    </div>
+
+    <!-- Start Slack Icon -->
+    <div id="slack" onclick="navigate(this.id)" class="social">
+      <span class="icon slack"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/1200px-Slack_icon_2019.svg.png" alt="Slack" style="width: 28px; height: 28px;"></span>
+    </div>
+
+    <!-- Start Netsuite Icon -->
+    <div id="netsuite" onclick="navigate(this.id)" class="social">
+      <span class="icon netsuite"><img src="https://cdn.worldvectorlogo.com/logos/netsuite.svg" alt="Netsuite" style="width: 32px; height: 32px;"></span>
+    </div>
+
+    <!-- Start Notion Icon -->
+    <div id="notion" onclick="navigate(this.id)" class="social">
+      <span class="icon notion"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" alt="Notion" style="width: 32px; height: 32px;"></span>
+    </div>
+
+    <!-- Start Greenhouse Icon -->
+    <div id="greenhouse" onclick="navigate(this.id)" class="social">
+      <span class="icon greenhouse"><img src="https://cdn.prod.website-files.com/6640cd28f51f13175e577c05/664e008eb47a660432908832_8c77cd11-acca-5ad9-ad6e-5675435fffc5.svg" alt="Greenhouse" style="width: 32px; height: 32px;"></span>
+    </div>
+
+    <!-- Start Jira Icon -->
+    <div id="jira" onclick="navigate(this.id)" class="social">
+      <span class="icon jira"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png" alt="Jira" style="width: 28px; height: 28px;"></span>
+    </div>
+
+  <script>
+    function navigate(id) {
+      // Map each service to its URL
+      const urls = {
+        google: "https://workspace.google.com/",
+        slack: "https://slack.com/",
+        netsuite: "https://www.netsuite.com/portal/home.shtml",
+        notion: "https://www.notion.so/",
+        greenhouse: "https://www.greenhouse.io/",
+        jira: "https://www.atlassian.com/software/jira",
+      };
+
+      // Open the corresponding URL in a new tab
+      window.open(urls[id], '_blank').focus();
+    }
+  </script>
+
+</body>
+</html>
