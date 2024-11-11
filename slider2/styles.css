@@ -56,14 +56,14 @@ body {
 
 .buttons button {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 2px solid #e5ebf3;
+    top: 30%;
+    transform: translateY(-30%);
+    border: 2px solid #ff4105;
     background-color: rgba(0, 0, 0, 0.5);
-    color: #e5ebf3;
+    color: #ff4105;
     cursor: pointer;
     padding: 13px 15px;
-    border-radius: 50%;
+    border-radius: 30%;
     outline: none;
     z-index: 100;
     transition: all 0.3s ease; background-color 0.3s ease;
@@ -79,11 +79,11 @@ body {
 }
 
 .buttons button#prev {
-    left: 10px;
+    left: 20px;
 }
 
 .buttons button#next {
-    right: 10px;
+    right: 20px;
 }
 
 @media (max-width: 100%) {
