@@ -54,28 +54,29 @@ body {
     opacity: 1;
 }
 
-.buttons button {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ffffff;
-    cursor: pointer;
-    padding: 5px 7px;
-    outline: none;
+.dots {
+    position: absolute;
+    bottom: 10px; /* Position the dots at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the dots */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between dots */
     z-index: 100;
-    transition: all 0.3s ease;
 }
 
-.buttons button:hover {
-    color: #ffffff;
+.dots .dot {
+    width: 12px; /* Size of the dot */
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.buttons button#prev {
-    left: 20px;
-}
-
-.buttons button#next {
-    right: 20px;
+.dots .dot.active {
+    background-color: #e5ebf3; /* Active dot color */
 }
 
 @media (max-width: 100%) {
