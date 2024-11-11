@@ -27,13 +27,3 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.addEventListener("click", nextSlide);
     prevButton.addEventListener("click", prevSlide);
 });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            showSlide(currentIndex);
-        });
-    });
-
-    showSlide(currentIndex);
-});
