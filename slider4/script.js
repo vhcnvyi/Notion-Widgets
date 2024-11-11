@@ -20,34 +20,70 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".slide");
-    const dotsContainer = document.querySelector(".dots");
-    let currentIndex = 0;
+ class Carousel {
+  constructor(element) {
+    this.carousel = element;
+    this.slides = Array.from(this.carousel.querySelectorAll('.carousel-slide'));
+    this.dotsContainer = this.carousel.querySelector('.carousel-dots');
+    this.currentIndex = 0;
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove("current");
-            slide.style.opacity = "0";
-        });
-        
-        slides[index].classList.add("current");
-        slides[index].style.opacity = "1";
+    // Create dots
+    this.createDots();
 
-        const dots = document.querySelectorAll(".dot");
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[index].classList.add("active");
-    }
-
-    slides.forEach((_, index) => {
-        const dot = document.createElement("div");
-        dot.classList.add("dot");
-        dot.addEventListener("click", () => {
-            currentIndex = index;
-            showSlide(currentIndex);
-        });
-        dotsContainer.appendChild(dot);
+    // Add event listeners
+    this.carousel.querySelector('.prev').addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.prev();
     });
-    showSlide(currentIndex);
-});
+    this.carousel.querySelector('.next').addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.next();
+    });
+
+    // Initial display
+    this.updateSlides();
+  }
+
+  createDots() {
+    this.slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.goToSlide(index);
+      });
+      this.dotsContainer.appendChild(dot);
+    });
+  }
+
+  updateSlides() {
+    this.slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === this.currentIndex);
+    });
+
+    const dots = this.dotsContainer.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === this.currentIndex);
+    });
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+    this.updateSlides();
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    this.updateSlides();
+  }
+
+  goToSlide(index) {
+    this.currentIndex = index;
+    this.updateSlides();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselElement = document.querySelector('.carousel');
+  new Carousel(carouselElement);
 });
