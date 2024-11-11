@@ -59,10 +59,10 @@ body {
     top: 50%;
     transform: translateY(-50%);
     border: none;
-    background-color: rgba(0, 0, 0, 0.40);
+    background-color: none;
     color: #FFFFFF;
     cursor: pointer;
-    padding: 5px 7px;
+    padding: none;
     border-radius: none;
     outline: none;
     z-index: 100;
