@@ -59,10 +59,10 @@ body {
     top: 50%;
     transform: translateY(-50%);
     border: 2px solid #ff9e7f;
-    background-color: rgba(0, 0, 0, 0.25);
-    color: #ff9e7f;
+    background-color: rgba(0, 0, 0, 0.50);
+    color: #fbece5ff;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-radius: 50%;
     outline: none;
     z-index: 100;
@@ -70,8 +70,8 @@ body {
 }
 
 .buttons button:hover {
-    background-color: #e5ebf3;
-    color: #362a2b;
+    background-color: #ff4105;
+    color: #fffcf6;
 }
 
 .buttons button#prev {
