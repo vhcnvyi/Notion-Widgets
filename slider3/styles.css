@@ -58,20 +58,20 @@ body {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    border: none;
-    background-color: none;
+    border: 2px solid #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.40);
     color: #FFFFFF;
     cursor: pointer;
-    padding: none;
-    border-radius: none;
+    padding: 5px 7px;
+    border-radius: 50%;
     outline: none;
     z-index: 100;
     transition: all 0.3s ease;
 }
 
 .buttons button:hover {
-    background-color: none;
-    color: #291a55ff;
+    background-color: #ff4105;
+    color: #fffcf6;
 }
 
 .buttons button#prev {
