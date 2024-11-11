@@ -62,12 +62,11 @@ body {
     background-color: rgba(0, 0, 0, 0.40);
     color: #FFFFFF;
     cursor: pointer;
-    padding: 6px 8px;
+    padding: 5px 7px;
     border-radius: 50%;
     outline: none;
     z-index: 100;
     transition: all 0.3s ease;
-    font-size: 4px
 }
 
 .buttons button:hover {
