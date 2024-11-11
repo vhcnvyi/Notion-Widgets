@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         slides[index].classList.add("current");
-        slides[index].style.opacity = "1"; // Make the current slide visible
+        slides[index].style.opacity = "1";
 
         const dots = document.querySelectorAll(".dot");
         dots.forEach(dot => dot.classList.remove("active"));
