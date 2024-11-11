@@ -55,7 +55,7 @@ body {
 }
 
 .buttons button {
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     border: 2px solid #e5ebf3;
@@ -66,7 +66,11 @@ body {
     border-radius: 50%;
     outline: none;
     z-index: 100;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; background-color 0.3s ease;
+}
+
+.slider-container:hover .buttons button {
+    opacity: 1;
 }
 
 .buttons button:hover {
