@@ -149,20 +149,20 @@ body {
     nextButton.addEventListener("click", () => {
       nextSlide();
       if (auto) {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, intervalTime);
+        stopAutoSlide();
+        startAutoSlide();
       }
     });
     prevButton.addEventListener("click", () => {
       prevSlide();
       if (auto) {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, intervalTime);
+        stopAutoSlide();
+        startAutoSlide();
       }
     });
 
     if (auto) {
-      slideInterval = setInterval(nextSlide, intervalTime);
+      startAutoSlide();
     }
 
   </script>
