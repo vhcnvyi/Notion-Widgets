@@ -54,29 +54,27 @@ body {
     opacity: 1;
 }
 
-.dots {
-    position: absolute;
-    bottom: 10px; /* Position the dots at the bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center the dots */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Space between dots */
-    z-index: 100;
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
 }
 
-.dots .dot {
-    width: 12px; /* Size of the dot */
-    height: 12px;
-    background-color: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.dots .dot.active {
-    background-color: #e5ebf3; /* Active dot color */
+.dot.active {
+  background: white;
 }
 
 @media (max-width: 100%) {
