@@ -45,9 +45,9 @@ body {
 
 .slide img {
     width: 100%;
-    height: 200%;
+    height: 100%;
     object-fit: contain;
-    background-color: #262626;
+    background-color: #FFFFFF;
 }
 
 .slide.current {
@@ -58,11 +58,11 @@ body {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    border: 2px solid #e5ebf3;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #e5ebf3;
+    border: 2px solid #ff9e7f;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #ff9e7f;
     cursor: pointer;
-    padding: 13px 15px;
+    padding: 5px 10px;
     border-radius: 50%;
     outline: none;
     z-index: 100;
