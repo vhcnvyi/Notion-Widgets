@@ -70,7 +70,7 @@ body {
 }
 
 .buttons button:hover {
-    background-color: #f0f9bc;
+    background-color: none;
     color: #291a55ff;
 }
 
