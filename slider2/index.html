@@ -24,7 +24,7 @@ body {
 .slider {
   position: relative;
   width: 100vw;
-  height: 120vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -90,7 +90,7 @@ body {
   color: #362a2b;
 }
 
-@media (min-width: 1920px) and (min-height: 1080px) {
+@media (min-width: 640px) and (min-height: 640px) {
   .slide .content {
     bottom: 70px;
     left: -600px;
@@ -155,20 +155,20 @@ body {
     nextButton.addEventListener("click", () => {
       nextSlide();
       if (auto) {
-        stopAutoSlide();
-        startAutoSlide();
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
       }
     });
     prevButton.addEventListener("click", () => {
       prevSlide();
       if (auto) {
-        stopAutoSlide();
-        startAutoSlide();
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
       }
     });
 
     if (auto) {
-      startAutoSlide();
+      slideInterval = setInterval(nextSlide, intervalTime);
     }
 
   </script>
