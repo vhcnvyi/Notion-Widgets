@@ -58,11 +58,11 @@ body {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    border: 2px solid #ff9e7f;
+    border: 2px solid #FFFFFF;
     background-color: rgba(0, 0, 0, 0.50);
-    color: #fbece5ff;
+    color: #FFFFFF;
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 10px 12px;
     border-radius: 50%;
     outline: none;
     z-index: 100;
