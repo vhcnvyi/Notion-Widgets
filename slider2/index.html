@@ -1,135 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Full-Screen Image Slider</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPoint-Style Image Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: "Lexend", sans-serif;
-      background-color: #362a2b;
-      color: #e5ebf3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+        body {
+            font-family: "Lexend", sans-serif;
+            background-color: #362a2b;
+            color: #e5ebf3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
 
-    .slider {
-      position: relative;
-      /* 16:9 aspect ratio dimensions for PowerPoint */
-      width: 960px;
-      height: 540px;
-      overflow: hidden;
-    }
+        .slider-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-    }
+        .slider {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            background: #262626;
+            overflow: hidden;
+        }
 
-    .slide.current {
-      opacity: 1;
-    }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
 
-    .slide:first-child {
-      background: url("1.png") no-repeat center/cover;
-    }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #262626;
+        }
 
-    .slide:nth-child(2) {
-      background: url("2.png") no-repeat center/cover;
-    }
+        .slide.current {
+            opacity: 1;
+        }
 
-    .slide:nth-child(3) {
-      background: url("3.png") no-repeat center/cover;
-    }
+        .buttons button {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 2px solid #e5ebf3;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #e5ebf3;
+            cursor: pointer;
+            padding: 13px 15px;
+            border-radius: 50%;
+            outline: none;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
 
-    .slide:nth-child(4) {
-      background: url("4.png") no-repeat center/cover;
-    }
+        .buttons button:hover {
+            background-color: #e5ebf3;
+            color: #362a2b;
+        }
 
-    .buttons button#prev {
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translateY(-50%);
-    }
+        .buttons button#prev {
+            left: 20px;
+        }
 
-    .buttons button#next {
-      position: absolute;
-      top: 50%;
-      right: 1rem;
-      transform: translateY(-50%);
-    }
+        .buttons button#next {
+            right: 20px;
+        }
 
-    .buttons button {
-      border: 2px solid #e5ebf3;
-      background-color: transparent;
-      color: #e5ebf3;
-      cursor: pointer;
-      padding: 13px 15px;
-      border-radius: 50%;
-      outline: none;
-    }
-
-    .buttons button:hover {
-      background-color: #e5ebf3;
-      color: #362a2b;
-    }
-  </style>
+        @media (max-width: 1280px) {
+            .slider {
+                width: 100%;
+                height: 100vh;
+                max-width: 1280px;
+                max-height: 720px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="slider">
-    <div class="slide current"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-  </div>
-  <div class="buttons">
-    <button id="prev"><i class="fas fa-arrow-left"></i></button>
-    <button id="next"><i class="fas fa-arrow-right"></i></button>
-  </div>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide current">
+                <img src="1.png" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="2.png" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="3.png" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="4.png" alt="Slide 4">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><i class="fas fa-arrow-left"></i></button>
+            <button id="next"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
 
-  <script>
-    const slides = document.querySelectorAll(".slide");
-    const nextButton = document.getElementById("next");
-    const prevButton = document.getElementById("prev");
+    <script>
+        const slides = document.querySelectorAll(".slide");
+        const nextButton = document.getElementById("next");
+        const prevButton = document.getElementById("prev");
 
-    const nextSlide = () => {
-      const current = document.querySelector(".current");
-      current.classList.remove("current");
-      if (current.nextElementSibling) {
-        current.nextElementSibling.classList.add("current");
-      } else {
-        slides[0].classList.add("current");
-      }
-    };
+        const nextSlide = () => {
+            const current = document.querySelector(".current");
+            current.classList.remove("current");
+            if (current.nextElementSibling && current.nextElementSibling.classList.contains("slide")) {
+                current.nextElementSibling.classList.add("current");
+            } else {
+                slides[0].classList.add("current");
+            }
+        };
 
-    const prevSlide = () => {
-      const current = document.querySelector(".current");
-      current.classList.remove("current");
-      if (current.previousElementSibling) {
-        current.previousElementSibling.classList.add("current");
-      } else {
-        slides[slides.length - 1].classList.add("current");
-      }
-    };
+        const prevSlide = () => {
+            const current = document.querySelector(".current");
+            current.classList.remove("current");
+            if (current.previousElementSibling && current.previousElementSibling.classList.contains("slide")) {
+                current.previousElementSibling.classList.add("current");
+            } else {
+                slides[slides.length - 1].classList.add("current");
+            }
+        };
 
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
-  </script>
+        nextButton.addEventListener("click", nextSlide);
+        prevButton.addEventListener("click", prevSlide);
+    </script>
 </body>
 </html>
