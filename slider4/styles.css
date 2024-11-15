@@ -24,7 +24,6 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    position: relative;
 }
 
 .slider {
@@ -55,27 +54,32 @@ body {
     opacity: 1;
 }
 
-.carousel-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10; /* Ensure dots are on top */
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
+.buttons button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.40);
+    color: #FFFFFF;
     cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 5px 7px;
+    border-radius: 50%;
+    outline: none;
+    z-index: 100;
+    transition: all 0.3s ease;
 }
 
-.dot.active {
-    background: white;
+.buttons button:hover {
+    background-color: #ff4105;
+    color: #fffcf6;
+}
+
+.buttons button#prev {
+    left: 20px;
+}
+
+.buttons button#next {
+    right: 20px;
 }
 
 @media (max-width: 100%) {
